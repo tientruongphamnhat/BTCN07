@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 // import App from './containers/App';
 import Login from './components/Login/index';
 import Register from './components/Register/index';
+import Home from './components/Home/index';
 import Game from './containers/Game';
 import * as serviceWorker from './serviceWorker';
 
@@ -19,7 +20,10 @@ ReactDOM.render(
       <nav>
         <ul>
           <li>
-            <Link to="/">Game</Link>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/Game">Game</Link>
           </li>
           <li>
             <Link to="/Login">Login</Link>
@@ -39,10 +43,13 @@ ReactDOM.render(
         <Route path="/Register">
           <Register />
         </Route>
-        <Route path="/">
+        <Route path="/Game">
           <Provider store={store}>
             <Game />
           </Provider>
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </div>
